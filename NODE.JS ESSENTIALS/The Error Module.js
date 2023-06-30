@@ -1,3 +1,4 @@
+//asynchronous Node APIs use error-first callback functions
 const errorFirstCallback = (err, data)  => {
   if (err) {
     console.log(`There WAS an error: ${err}`);
