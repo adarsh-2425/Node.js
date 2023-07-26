@@ -23,3 +23,29 @@ const formatUserlist = users => {
 
 console.log(formatUserlist(userList))
 ```
+2. write a function called searchBooks that accepts a search query string and returns an array of books that match the query. If no books match the query, the function should return an empty array.
+
+In addition, the function should use the util.inspect() function to log the search result object to the console, including all of the book properties.
+
+```
+const util = require("util");
+
+const bookList = [
+  { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', description: 'A tragic love story set in the 1920s.' },
+  { title: 'To Kill a Mockingbird', author: 'Harper Lee', description: 'A story about racial injustice in the American South.' },
+  { title: 'Pride and Prejudice', author: 'Jane Austen', description: 'A classic romance novel set in 19th century England.' }
+];
+
+//search books function
+const searchBooks = query => {
+  query = query.toLowerCase();
+  
+  const result = bookList.filter(book => {
+    return book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query) || book.description.toLowerCase().includes(query)
+  })
+
+  console.log(util.inspect(result));
+}
+
+searchBooks("Kill");
+```
