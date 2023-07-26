@@ -41,7 +41,8 @@ const searchBooks = query => {
   query = query.toLowerCase();
   
   const result = bookList.filter(book => {
-    return book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query) || book.description.toLowerCase().includes(query)
+    return book.title.toLowerCase().includes(query) || book.author.toLowerCase().includes(query)
+|| book.description.toLowerCase().includes(query)
   })
 
   console.log(util.inspect(result));
