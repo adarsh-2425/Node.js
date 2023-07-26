@@ -1,4 +1,5 @@
-1. write a function called formatUserList that accepts an array of user objects and formats the data as a table that can be displayed in the console.
+## 1. util.format()
+Write a function called formatUserList that accepts an array of user objects and formats the data as a table that can be displayed in the console.
 The function should use the util.format() function to generate the table,
 and should include column headers and separators to make the table easy to read.
 
@@ -23,7 +24,8 @@ const formatUserlist = users => {
 
 console.log(formatUserlist(userList))
 ```
-2. write a function called searchBooks that accepts a search query string and returns an array of books that match the query. If no books match the query, the function should return an empty array.
+## 2. util.inspect()
+Write a function called searchBooks that accepts a search query string and returns an array of books that match the query. If no books match the query, the function should return an empty array.
 
 In addition, the function should use the util.inspect() function to log the search result object to the console, including all of the book properties.
 
@@ -49,4 +51,19 @@ const searchBooks = query => {
 }
 
 searchBooks("Kill");
+```
+## 3. util.promisify()
+
+```
+const fs  = require("fs");
+const util = require("util");
+const path = require("path");
+
+const filePath = path.join(__dirname, "./file.txt");
+
+const readFile = util.promisify(fs.readFile);
+
+readFile(filePath, "utf-8")
+  .then(text => console.log(text))
+  .catch(error => console.error(error));
 ```
