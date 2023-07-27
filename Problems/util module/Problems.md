@@ -74,3 +74,26 @@ addNumbersPromise(3, 5)
   .then(result => console.log(result))
   .catch(error => console.error(error));
 ```
+## 4. util.inherit()
+
+```
+class Animal {
+  constructor() {
+    this.type = 'Unknown';
+  }
+
+  sayType() {
+    console.log(`I am a ${this.type}`);
+  }
+}
+
+class Dog extends Animal {
+  constructor() {
+    super();
+    this.type = 'Dog';
+  }
+}
+
+const dog = new Dog();
+dog.sayType(); // Output: I am a Dog
+```
