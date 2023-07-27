@@ -54,16 +54,23 @@ searchBooks("Kill");
 ```
 ## 3. util.promisify()
 
+Suppose you have a function called addNumbers that takes two numbers as arguments and returns the sum of the two numbers through a callback function. Write a function that uses util.promisify() to convert the addNumbers function into a promise-based function
+
 ```
-const fs  = require("fs");
+//import util module
 const util = require("util");
-const path = require("path");
 
-const filePath = path.join(__dirname, "./file.txt");
+//defined function for adding two numbers and response with callback
+function addNumbers(num1, num2, callback) {
+  const sum = num1 + num2;
+  callback(sum);
+}
 
-const readFile = util.promisify(fs.readFile);
+//convert normal calback function into promise
+const addNumbersPromise = util.promisify(addNumbers);
 
-readFile(filePath, "utf-8")
-  .then(text => console.log(text))
+//output using promise
+addNumbersPromise(3, 5)
+  .then(result => console.log(result))
   .catch(error => console.error(error));
 ```
