@@ -1,3 +1,4 @@
+//create a very simple groupchat using events module and backup chat data into an txt file using fs module
 const EventEmitter = require('events');
 const fs = require('fs');
 const path = require('path');
