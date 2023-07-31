@@ -12,4 +12,8 @@ function queryToString(string) {
 
 const urlString = 'https://www.example.com/path?query1=value1&query2=value2&query3=value3';
 const query = queryToString(urlString);
-console.log(query);  // 'www.example.com'
+console.log(query);  /* {
+  query1: 'value1',
+  query2: 'value2',
+  query3: 'value3'
+}*/
